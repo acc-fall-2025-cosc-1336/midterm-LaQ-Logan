@@ -12,7 +12,7 @@ def run_menu(): #will run the menu and get user input
 def handle_choice(choice): #will handle the user's choice
     if choice == '1':
         print("Starting the game...")
-        get_random_number() #will start the game
+        play_game() #will start the game
     elif choice == '2':
         print("Exiting the game. Goodbye!") #will exit the game
     else:
@@ -20,9 +20,13 @@ def handle_choice(choice): #will handle the user's choice
 
 import random #will import the random module
 
-def get_random_number(): #will return a random number between 1 and 100
-    while True:
-        num = random.randint(1, 5) #will get a random number between 1 and 5
+def get_random_number(): #will get a random number between 1 and 5
+    return random.randint(1, 5) 
+   
+   
+def play_game(): #will run the game
+   while True:
+        num = get_random_number()
         guessed = False #the user has not guessed the number yet
         
         while not guessed:
